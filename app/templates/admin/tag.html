@@ -1,0 +1,66 @@
+{% extends "blog.html" %}
+
+{% block title %}Existential Vision | {{ entries[0].title }}{% endblock title %}
+{% block content %}
+    <div class="section">
+        {% for message in get_flashed_messages() %}
+        <div class="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message }}
+        </div>
+        {% endfor %}
+        <a href="{{ url_for('main.entries') }}"> Back </a>
+        <ul class="entries">
+            {% for entry in entries %}
+            <li class="entry">
+                <h2 class="title">
+                    <a href="{{ url_for('main.entry', eyear=entry.published.year, emonth=entry.published.month, url=entry.url) }}">{{ entry.title }}</a>
+                </h2>
+                <div class="entry-header">
+                    <div class="published">
+                        <span class="caption">Posted:</span>
+                        <span class="publishdate"> {{ moment(entry.published).format('dddd, MMMM Do, YYYY') }}</span>
+                    </div>
+                    <div class="share pull-right">
+                        <a href="{{ url_for('oauth2.share_entry', url=entry.url) }}">Share on Linkedin</a>
+                    </div>
+                </div>
+                <div class="entry-body">
+                    <div class="entry-content">
+                    {% if entry.body_html %}
+                        {{ entry.body_html | safe }}
+                    {% else %}
+                        {{ entry.body }}
+                    {% endif %}
+                    </div>
+                </div>
+                <div class="entry-footer">
+                    <div class="label-footer">
+                        <ul>
+                            <span class="h6">Topics:</span>
+                            {% for tag in entry.tags %}
+                                <a href="{{ url_for('main.topic', tag=tag.name) }}">
+                                    <li class="tag">{{ tag.name }}</li>
+                                </a>
+                            {% endfor %}
+                            <br />
+                            <br />
+                            <form method="POST">
+                                {{ form.csrf_token }}
+                                <div class="form-group">
+                                {{ form.name(placeholder="...", class="form-control") }}
+                                </div>
+                            </form>
+                            {% if current_user.is_administrator() %}
+                                {% include 'admin/_modify.html' %}
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            {% else %}
+                <li><em>Unbelievable. No entries here so far</em></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block meta %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% endblock %}
+{% block title %}Existential Vision{% endblock %}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet"
+    href="{{ url_for('static', filename='styles/desktop.css') }}"
+    type="text/css" />
+{% endblock %}
+{% block body %}
+<section id='homepage'>
+    <div id="head-wrapper">
+        <header>
+            <div class="header-title">
+                <a href=""><h2>Existential Vision</h2></a>
+            </div>
+        </header>
+    </div>
+    <h3 id="tagline">An existentialist's take on startups and growth.</h3>
+    <nav>
+        <div id="navigation">
+            <a id="blog" href="/recent">Enter</a>
+        </div>
+    </nav>
+</section>
+{% block scripts %}
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/moment.js') }}"></script>
+{% endblock %}
+{% endblock %}
