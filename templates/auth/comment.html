@@ -1,0 +1,11 @@
+{% extends "entry.html" %}
+
+{% block comment %}
+    <form method="post">
+        {{ form.csrf_token }}
+        <div class="form-group">
+        {{ form.body.label }}{{ form.body(placeholder='Comment', class='form-control') }}
+        </div>
+        {{ form.submit() }}
+    </form>
+{% endblock %}

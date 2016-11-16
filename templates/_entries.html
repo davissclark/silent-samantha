@@ -1,0 +1,69 @@
+{% for entry in entries %}
+<li class="entry" id="{{ entry.url }}">
+    <h2 class="title">
+        <a href="{{ url_for('main.entry', eyear=entry.published.year, emonth=entry.published.month, url=entry.url) }}">{{ entry.title }}</a>
+    </h2>
+    <div class="entry-header">
+        <div class="published pull-left">
+            <span class="caption">Posted:</span>
+            <span class="publishdate"> {{ moment(entry.published).format('dddd, MMMM Do, YYYY') }}</span>
+        </div>
+        <div class="share pull-right">
+            <a href="{{ url_for('oauth2.share_entry', url=entry.url) }}">Share on Linkedin</a>
+        </div>
+    </div>
+    <div class="entry-body">
+        <div class="entry-content">
+        {% if entry.body_html %}
+            {{ entry.body_html | safe }}
+        {% else %}
+            {{ entry.body }}
+        {% endif %}
+        </div>
+    </div>
+    <div class="entry-footer">
+        <div class="label-footer">
+            <ul class="tag-list">
+                {% for tag in entry.tags %}
+                <li class="pull-left">
+                    <a class="tag" href="{{ url_for('main.topic', tag=tag.name) }}">{{ tag.name | lower }}</a>
+                    {% if current_user.is_administrator() %}
+                        <a href="{{ url_for('admin.deleteTag', entry=entry.id, tag=tag.id) }}">x</a>
+                    {% endif %}
+                </li>
+                {% endfor %}
+                {% if current_user.is_administrator() %}
+                <li class="h6" id="tag">
+                    <a href="{{ url_for('admin.tag', url=entries[0].url) }}">+ Tag</a>
+                </li>
+                {% endif %}
+            </ul>
+            <div class="clearfix"></div>
+            <ul class='entry-nav'>
+                {% if entries[1] %}
+                    <li class="pull-left h5">
+                        <a href="{{ url_for('main.entry', eyear=entry.published.year, emonth=entry.published.month, url=entry.url) }}#disqus_thread"></a>
+                    </li>
+                    <li class="pull-right h5">
+                        <a href="{{ url_for('main.entry', eyear=entry.published.year, emonth=entry.published.month, url=entry.url) }}">view entry</a>
+                    </li>
+                {% else %}
+                    {% if current_user.is_administrator() %}
+                        {% include 'admin/_modify.html' %}
+                    {% endif %}
+                {% endif %}
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+    <div class="clear">
+        <input type="submit" value="Subscribe for Free" name="subscribe" id="mc-embedded-subscribe" class="button">
+    </div>
+</div>
+<!--End mc_embed_signup-->
+</li>
+{% else %}
+<li><em>What an extraordinary change takes place . . . when for the first time the fact that everything depends upon how a thing is thought first enters the consciousness, when, in consequence, thought in its absoluteness replaces an apparent reality.</em></li>
+{% endfor %}

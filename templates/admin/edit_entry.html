@@ -1,0 +1,17 @@
+{% extends "blog.html" %}
+{% block page_content %}
+<hr />
+<form method="POST">
+    {{ form.csrf_token }}
+    <div class="form-group">{{ form.title(class='entry-title form-control') }}</div>
+    <h6 class="publishdate"><strong>{{ moment().format('dddd, MMMM Do, YYYY') }}</strong></h6>
+    <div class="form-group">{{ form.body(class='entry-body form-control') }}</div>
+    <hr />
+    {{ form.submit() }}
+</form>
+{{ super() }}
+{% endblock %}
+{% block scripts %}
+    {{ super() }}
+    {{ pagedown.include_pagedown() }}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "blog.html" %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block page_content %}
+    <h3>Edit User Profile</h3>
+    <div>
+        <form action="{{ url_for('main.edit_profile') }}" method="POST">
+            {{ form.csrf_token }}
+            {{ form.name.label }} {{ form.name() }}
+            {{ form.location.label }} {{ form.location() }}
+            {{ form.about_me.label }} {{ form.about_me() }}
+            {{ form.submit() }}
+        </form>
+        <div><a href="{{ url_for('auth.change_email_request') }}">Change email</a></div>
+        <div><a href="{{ url_for('auth.change_password') }}">Change password</a></div>
+    </div>
+{% endblock %}

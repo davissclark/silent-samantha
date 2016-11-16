@@ -1,0 +1,55 @@
+{% extends "blog.html" %}
+
+{% block title %}Existential Vision | Metrics{% endblock %}
+{% block hscripts %}
+{{ super() }}
+<script type="text/javascript">
+var client = new Keen({
+            projectId: "542c0b7a709a39747ae0d572",       // String (required)
+            writeKey: "5feaca4bd15b4556f069c7d306018198204707a22d97b7385bdef77147d3da28027f31e520e3760dd893548105aa29651008bebaad8e823aef10b88cd1a21d452a7a763c9ef6ff959ac39f4cff75053cb01b48037a0153cbc75896128f79d3b3486e884f4f11a1fafa8c12560bec14dc", // String (required for sending data)
+            readKey: "b6aa7ad260b25de0119a4a1e0a875e1ee16baae791a675eb72f164b4f266a1daefda6c6e1d384c2f15c3c733cf61db111fad14cf597e6b480d9e46ce2bead5df759d6d06161bb7ee1baef46d4645c813b29bf5614798c795c5231cc7ee69cebdf95922eec7af6f5170cced2bb29312fc",   // String (required for querying data)
+            protocol: "https",                  // String (optional: https | http | auto)
+            host: "api.keen.io/3.0",            // String (optional)
+            requestType: "jsonp"                // String (optional: jsonp, xhr, beacon)
+        });
+</script>
+<script>    
+Keen.ready(function(){
+            var total_pageviews = new Keen.Query("count",{
+                eventCollection: "pageviews",
+                groupBy: "url.path",
+                timeframe: "today",
+                interval: "hourly"
+            });
+
+            client.draw(total_pageviews, document.getElementById("entry-body"), {
+                chartType: "barchart",
+                title: "Daily pageviews (7 days)",
+                chartOptions: {
+                    isStacked: true
+                }
+            });
+        })
+            </script>
+{% endblock %}
+{% block content %}
+<div class="section">
+    <a href="{{ url_for('main.entries') }}" id="back"> Back </a>
+    <ul class="entries">
+        <li class="entry" id="about">
+            <h2 class="title">
+                <a href="">Metrics</a>
+            </h2>
+            <div class="entry-header">
+            </div>
+            <div id="entry-body">
+            </div>
+            <div class="entry-footer">
+                <div class="label-footer">
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+{% endblock content %}
+
