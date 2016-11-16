@@ -68,7 +68,7 @@ class ProductionConfig(Config):
 
 class HerokuConfig(ProductionConfig):
     SSL_DISABLE = bool(os.environ.get('SSL_DISABLE'))
-    REDIRECT_URI_BASE = os.environ.get('REDIRECT_URI_BASE') or 'http://existentialvision.herokuapp.com/'
+    REDIRECT_URI_BASE = os.environ.get('REDIRECT_URI_BASE') or 'http://silent-samantha.herokuapp.com/'
 
     @classmethod
     def init_app(cls, app):
