@@ -57,20 +57,6 @@
         <script type="text/javascript">
             var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};</script>
         {{ moment.include_moment() }}
-
-        <script type="text/javascript">
-            !function(a,b){a("Keen","https://d26b395fwzu5fz.cloudfront.net/3.0.9/keen.min.js",b)}(function(a,b,c){var d,e,f;c["_"+a]={},c[a]=function(b){c["_"+a].clients=c["_"+a].clients||{},c["_"+a].clients[b.projectId]=this,this._config=b},c[a].ready=function(b){c["_"+a].ready=c["_"+a].ready||[],c["_"+a].ready.push(b)},d=["addEvent","setGlobalProperties","trackExternalLink","on"];for(var g=0;g<d.length;g++){var h=d[g],i=function(a){return function(){return this["_"+a]=this["_"+a]||[],this["_"+a].push(arguments),this}};c[a].prototype[h]=i(h)}e=document.createElement("script"),e.async=!0,e.src=b,f=document.getElementsByTagName("script")[0],f.parentNode.insertBefore(e,f)},this);
-
-            // Configure the Keen object with your Project ID and (optional) access keys.
-            var client = new Keen({
-            projectId: "542c0b7a709a39747ae0d572",       // String (required)
-            writeKey: "5feaca4bd15b4556f069c7d306018198204707a22d97b7385bdef77147d3da28027f31e520e3760dd893548105aa29651008bebaad8e823aef10b88cd1a21d452a7a763c9ef6ff959ac39f4cff75053cb01b48037a0153cbc75896128f79d3b3486e884f4f11a1fafa8c12560bec14dc", // String (required for sending data)
-            readKey: "b6aa7ad260b25de0119a4a1e0a875e1ee16baae791a675eb72f164b4f266a1daefda6c6e1d384c2f15c3c733cf61db111fad14cf597e6b480d9e46ce2bead5df759d6d06161bb7ee1baef46d4645c813b29bf5614798c795c5231cc7ee69cebdf95922eec7af6f5170cced2bb29312fc",   // String (required for querying data)
-            protocol: "https",                  // String (optional: https | http | auto)
-            host: "api.keen.io/3.0",            // String (optional)
-            requestType: "jsonp"                // String (optional: jsonp, xhr, beacon)
-        });
-        </script>
         <script type="text/javascript">
             window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
             heap.load("2920534793");
