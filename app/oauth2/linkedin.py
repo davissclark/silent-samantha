@@ -7,8 +7,8 @@ from ..models import Entry
 import keen
 
 
-client_id = '75lkk6j4fyox43'
-client_secret = 'nrYmLETLi80XAw2Q'
+client_id = '86z783qtr0ira7'
+client_secret = 'VEhRnB454OexhM4y'
 authorization_base_url = 'https://www.linkedin.com/uas/oauth2/authorization'
 token_url = 'https://www.linkedin.com/uas/oauth2/accessToken'
 scope = ['r_basicprofile w_share']
