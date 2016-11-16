@@ -52,7 +52,7 @@
         </section>
         <section class="section" id="admin-panel">
             <ul class="nav list-unstyled">
-                <li id="topics">
+<!--                 <li id="topics">
                     <button class="topic-control">Topics</button>
                     <ul class="list-unstyled topic-panel">
                     {% if topics %}
@@ -68,10 +68,10 @@
                         <li>---</li>
                     {% endif %}
                     </ul>
-                </li>
-                <a href="/metrics"><li>
+                </li> -->
+<!--                 <a href="/metrics"><li>
                     <button class="metrics-control">Metrics</button>
-                </li></a>
+                </li></a> -->
             </ul>
             {% if current_user.is_authenticated() %}
             <ul id="filter">{% include '_panel.html' %}</ul>
@@ -86,71 +86,5 @@
 <script src="{{ url_for('static', filename='scripts/showdown.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts/blog.js') }}"></script>
-<script type="text/javascript">
-/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-var disqus_shortname = 'existentialvisionblog'; // required: replace example with your forum shortname
-/* * * DON'T EDIT BELOW THIS LINE * * */
-(function () {
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());
-</script>
-<script type="text/javascript">
-$(document).ready(function(){
-//Add a pageview event in Keen IO
-    var fullUrl = window.location.href;
-    var parsedUrl = $.url(fullUrl);
-    var parser = new UAParser();
-
-    var eventProperties = {
-        session_id: $.cookie("session_cookie")["id"],
-        url: {
-            source: parsedUrl.attr("source"),
-            protocol: parsedUrl.attr("protocol"),
-            domain: parsedUrl.attr("host"),
-            port: parsedUrl.attr("port"),
-            path: parsedUrl.attr("path"),
-            anchor: parsedUrl.attr("anchor")
-        },
-        user_agent: {
-            browser: parser.getBrowser(),
-            engine: parser.getEngine(),
-            os: parser.getOS()
-        },
-        permanent_tracker: $.cookie("permanent_cookie")["id"]
-    };
-
-    /*
-    //If you know that the user is currently logged in, add information about the user.
-    eventProperties["user"] = {
-    id: "",
-    signupDate: ""
-    etc: ".."
-    };
-    */
-
-    //Add information about the referrer of the same format as the current page
-    var referrer = document.referrer;
-    referrerObject = null;
-
-    if(referrer != undefined){
-        parsedReferrer = $.url(referrer);
-
-        referrerObject = {
-            source: parsedReferrer.attr("source"),
-            protocol: parsedReferrer.attr("protocol"),
-            domain: parsedReferrer.attr("host"),
-            port: parsedReferrer.attr("port"),
-            path: parsedReferrer.attr("path"),
-            anchor: parsedReferrer.attr("anchor")
-        }
-    }
-
-    eventProperties["referrer"] = referrerObject;
-    client.addEvent("pageviews", eventProperties)
-});
-</script>
 {% endblock %}
 {% endblock %}
