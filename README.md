@@ -1,1 +1,2 @@
-# silent-samantha
+# existentialvision
+blog and dev platform
