@@ -20,6 +20,7 @@
                     $(function(){  // $(document).ready shorthand
                         $('#testytest').hide().delay(7000).fadeIn(5000);
                         $('#safe').hide().delay(12000).fadeIn(5000);
+                        $('#wait').hide().delay(17000).fadeIn(5000);
                         if(isMobile) {
                             $('#testytest2').hide().delay(7000).fadeIn(5000);
                         } else {
@@ -38,6 +39,10 @@
                          <li id = "safe">
                              <br/>
                              <p><strong>But, really, if you want me to leave you <br/>alone, just ask.</strong></p>
+                         </li>
+                         <li id = "wait">
+                             <br/>
+                             <p><strong>Wait did you say "walk and talk on Saturday"? <br/>No, you didn't say anything? <br/>Oh, never mind.</strong></p>
                          </li>
                 </ul>
     {% block entry_column %}
