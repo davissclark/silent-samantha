@@ -36,7 +36,7 @@ def index():
     return render_template('landing.html')
 
 
-@main.route('/recent')
+@main.route('/silence')
 def entries():
     entries = Entry.query.order_by(Entry.published.desc()).all()
     return render_template('blog.html', entries=entries)
