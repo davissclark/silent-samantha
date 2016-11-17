@@ -21,6 +21,7 @@
                 <script>
                     $(function(){  // $(document).ready shorthand
                          $('#testytest').hide().fadeIn(15000);
+                         $('#testytest2').hide().fadeIn(15000);
                     });
                 </script>
 <!--                 <ul class="entries">{% include '_entries.html' %}</ul> -->
@@ -48,7 +49,7 @@
                 <img src="{{ grav }}" class="img-thumbnail" id="grav"/>
             </a>            -->
             <ul class="list-unstyled contact-list">
-            <li class = "option">
+            <li class = "option" id = "testytest2">
                 <p>v *scroll* v</p>
                 <br/>
             </li>
@@ -82,7 +83,7 @@
             {% endif %}
         </section>-->
     </div>
-    {% endblock sidebar %}-->
+    {% endblock sidebar %}
     <!--<a href="https://heapanalytics.com/?utm_source=badge"><img style="width:108px;height:41px;display:block;margin-left:20px;margin-bottom:35px;" src="//heapanalytics.com/img/badge.png" alt="Heap - iOS and Web Analytics" /></a-->
 </div>
 <div class="clearfix"></div>
