@@ -18,9 +18,14 @@
             {% block content %}
             <div class="section" id="main">
                 {% block page_content %}
+                <script>
+                    $(function(){  // $(document).ready shorthand
+                         $('#testytest').hide().fadeIn('slow');
+                    });
+                </script>
 <!--                 <ul class="entries">{% include '_entries.html' %}</ul> -->
                      <ul class="entries">
-                         <li></li>
+                         <li id = "testytest">test content</li>
                 </ul>
                 {% endblock page_content %}
             </div>
