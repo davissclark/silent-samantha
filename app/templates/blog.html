@@ -12,13 +12,7 @@
 <div class="alert">{{ message }}</div>
 {% endfor %}
 <div class="blog-wrapper">
-    {% block entry_column %}
-    <div class="entry-column-wrapper">
-        <div class="entry-column" id="content">
-            {% block content %}
-            <div class="section" id="main">
-                {% block page_content %}
-                <script>
+    <script>
                     var isMobile = false; //initiate as false
                     // device detection
                     if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
@@ -33,13 +27,8 @@
                         }
                     });
                 </script>
-<!--                 <ul class="entries">{% include '_entries.html' %}</ul> -->
                      <ul class="entries">
                          <li id = "testytest">
-                             <!--<p><strong>To be honest, I've been having fun with this the last couple days. I get sick of the same old thing and this has all been a veritable first. Yet the fact remains that I don't actually know you - nor you me. I was excited to meet you, cause few people capture my attention like you did from text #1, and I was energized by your disarmingly sudden silence, cause few things excite me more than the creative challenge of upsetting imbalance. But then, last night, I realized that the irony in my vision for www.silentsamantha.com could only charm within a certain realm of trust. The last thing I want is for my playful persistence to be misconstrued as something it's not.</strong></p>
-                             <br/>
-                             <p><strong>I could pitch you some lame value prop on how amazing I am or attempt to hook you with stories of intrigue or try to amuse you with my audacious strategy to bend the silence back on itself, but I'll gladly spare you. What I do want is to get to know you, and I think you'd have fun with me. Get in touch if you want to meet someone new.</strong></p> 
-                             <br/>-->
                              <p><strong>"I can teach you how to build a website"</strong></p>
                              <br/>
                              <img src = "{{ url_for('static', filename='images/cat.jpeg') }}" alt = "Professor Cat" />
@@ -50,6 +39,13 @@
                              <p><strong>But, really, if you want me to leave you alone, just ask.</strong></p>
                          </li>
                 </ul>
+    {% block entry_column %}
+    <div class="entry-column-wrapper">
+        <div class="entry-column" id="content">
+            {% block content %}
+            <div class="section" id="main">
+                {% block page_content %}
+                
                 {% endblock page_content %}
             </div>
             {% endblock content %}
