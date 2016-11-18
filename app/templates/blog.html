@@ -58,8 +58,12 @@
                                 $('<li><p>Mobile may not support full experience.</p></li>').insertBefore('#audio').hide().delay(42000).fadeIn(4000).delay(4000).fadeOut(28500);
                             }
                             setTimeout(function() {
-                                $('#testytest').text("No, man, that gap is definitely unintentional. You're always reading into things, taking things too far, like this is art? This is just shitty, hacked-together web development...").hide().fadeIn(5000).delay(5000).text("With no taste at all.").delay(5000).fadeOut(5000);
+                                $('#testytest').text("No, man, that gap is definitely unintentional. You're always reading into things, taking things too far, like this is art? This is just shitty, hacked-together web development...").hide().fadeIn(5000);
                             }, 200000);
+
+                            setTimeout(function() {
+                                $('#testytest').text("With no taste at all.").delay(5000).fadeOut(5000);
+                            }, 205000);
                     });
                 </script>
                      <ul class="entries">
