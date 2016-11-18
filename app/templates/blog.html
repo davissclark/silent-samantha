@@ -25,7 +25,9 @@
                                 $('#wait3').hide();
                                 $('#wait4').hide();
                                 $('#wait5').hide();
-                                $("<button id = 'start'>Start</button>").delay(7000).insertBefore("#testytest");
+                                setTimeout(function(){
+                                    $("<li><button id = 'start'>Start</button></li>").insertBefore("#testytest");
+                                }, 7000);
 
                             $('#start').click(function(){
                                 document.getElementById('#audio').play()
