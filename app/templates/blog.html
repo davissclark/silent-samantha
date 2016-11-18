@@ -26,12 +26,12 @@
                                 $('#wait4').hide();
                                 $('#wait5').hide();
                                 setTimeout(function(){
-                                    $("<li><button id = 'start'>Start</button></li>").insertBefore("#testytest").hide().fadeIn(5000);
+                                    $("<li><button>Start</button></li>").insertBefore("#testytest").hide().fadeIn(5000);
                                 }, 7000);
 
-                            $('#start').on("tap", function(){
+                            $('button').on("tap", function(){
                                 document.getElementById('#audio').play()
-                                $('#start').remove();
+                                $(this).remove();
                                 $('#date').delay(85000).fadeIn(5000).delay(34000).fadeOut(28500);
                                 $('#testytest').fadeIn(5000).delay(34000).fadeOut(28500);
                                 $('#safe').delay(5000).fadeIn(5000).delay(29000).fadeOut(28500);
