@@ -25,6 +25,7 @@
                         $('#wait3').hide().delay(27000).fadeIn(5000);
                         $('#wait4').hide().delay(32000).fadeIn(5000);
                         $('#wait5').hide().delay(37000).fadeIn(5000);
+                        window.setTimeout($('#audio').play(), 42000);
                         if(isMobile) {
                             $('#testytest2').hide().delay(5000).fadeIn(5000);
                         } else {
@@ -32,6 +33,7 @@
                         }
                     });
                 </script>
+                <audio id="audio" src="{{ url_for('static', filename='mp3/Fade.mp3') }}"></audio>
                      <ul class="entries">
                          <li id = "testytest">
                              <p><strong>"I can teach you how to build a website"</strong></p>
