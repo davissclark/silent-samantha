@@ -54,6 +54,9 @@
                             $('#wait3').hide().delay(27000).fadeIn(5000).delay(14000).fadeOut(28500);
                             $('#wait4').hide().delay(32000).fadeIn(5000).delay(9000).fadeOut(28500);
                             $('#wait5').hide().delay(37000).fadeIn(5000).delay(4000).fadeOut(28500);
+                            if(isMobile) {
+                                $('<li><p>Mobile may not support full experience.</p></li>').insertBefore('#audio').hide().delay(42000).fadeIn(4000).delay(4000).fadeOut(28500);
+                            }
                     });
                 </script>
                      <ul class="entries">
