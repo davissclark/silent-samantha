@@ -26,12 +26,11 @@
                                 $('#wait4').hide();
                                 $('#wait5').hide();
                                 setTimeout(function(){
-                                    $("<li><button>Start</button></li>").insertBefore("#testytest").hide().fadeIn(5000);
+                                    $("<button>Start</button>").insertBefore(".entries").hide().fadeIn(5000);
                                 }, 7000);
 
                             $('button').on("tap", function(){
                                 document.getElementById('#audio').play();
-                                $(this).remove();
                                 $('#date').delay(85000).fadeIn(5000).delay(34000).fadeOut(28500);
                                 $('#testytest').fadeIn(5000).delay(34000).fadeOut(28500);
                                 $('#safe').delay(5000).fadeIn(5000).delay(29000).fadeOut(28500);
@@ -40,6 +39,7 @@
                                 $('#wait3').delay(20000).fadeIn(5000).delay(14000).fadeOut(28500);
                                 $('#wait4').delay(25000).fadeIn(5000).delay(9000).fadeOut(28500);
                                 $('#wait5').delay(30000).fadeIn(5000).delay(4000).fadeOut(28500);
+                                $(this).remove();
                             });
 
                         } else {
