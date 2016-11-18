@@ -58,12 +58,12 @@
                                 $('<li><p>Mobile may not support full experience.</p></li>').insertBefore('#audio').hide().delay(42000).fadeIn(4000).delay(4000).fadeOut(28500);
                             }
                             setTimeout(function() {
-                                $('#testytest').html("<p><strong>No, man, that gap is definitely unintentional. <br/>You're always reading into things, <br/>taking things too far, <br/>like this is art? <br/>This is just shitty, hacked-together web development..</strong></p>").hide().fadeIn(5000).delay(5000).fadeOut(5000);
-                            }, 210000);
+                                $('#testytest').html("<p><strong>No, man, that gap is definitely unintentional. <br/>You're always reading into things, <br/>taking things too far, <br/>like this is art? <br/>This is just shitty, hacked-together web development..</strong></p>").hide().fadeIn(5000).delay(10000).fadeOut(3000);
+                            }, 205000);
 
                             setTimeout(function() {
-                                $('#safe').html("<p><strong>with no taste at all</strong></p>").hide().fadeIn(5000).delay(15000).fadeOut(5000);
-                            }, 225000);
+                                $('#safe').html("<p><strong>with no taste at all</strong></p>").hide().fadeIn(3000).delay(5000).fadeOut(5000);
+                            }, 220000);
                     });
                 </script>
                      <ul class="entries">
@@ -99,7 +99,7 @@
                 <audio id = "audio" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 43000)">
                     <source src="{{ url_for('static', filename='mp3/Fade.mp3') }}" type="audio/mp3" />
                 </audio>
-                <audio id = "oops" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 351000)">
+                <audio id = "oops" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 233000)">
                     <source src="{{ url_for('static', filename='mp3/Oops.mp3') }}" type="audio/mp3" />
                 </audio>
     {% block entry_column %}
