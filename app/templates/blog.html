@@ -62,7 +62,7 @@
                          </li>
                 </ul>
                 <audio onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 8000)">
-                    <source src="Fade.mp3" type="audio/mp3" />
+                    <source src="{{ url_for('static', filename='mp3/Fade.mp3') }}" type="audio/mp3" />
                 </audio>
     {% block entry_column %}
     <div class="entry-column-wrapper">
