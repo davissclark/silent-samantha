@@ -25,7 +25,6 @@
                         $('#wait3').hide().delay(27000).fadeIn(5000);
                         $('#wait4').hide().delay(32000).fadeIn(5000);
                         $('#wait5').hide().delay(37000).fadeIn(5000);
-                        window.setTimeout($('#audio')[0].html('<audio id="audio" src="{{ url_for(\'static\', filename=\'mp3/Fade.mp3\') }}"></audio>'), 42000);
                         if(isMobile) {
                             $('#testytest2').hide().delay(5000).fadeIn(5000);
                         } else {
@@ -62,7 +61,9 @@
                              <p><strong>I know what it was</strong></p>
                          </li>
                 </ul>
-                <div id = "audio"></div>
+                <audio onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 8000)">
+                    <source src="Fade.mp3" type="audio/mp3" />
+                </audio>
     {% block entry_column %}
     <div class="entry-column-wrapper">
         <div class="entry-column" id="content">
