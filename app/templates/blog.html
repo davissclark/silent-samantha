@@ -82,14 +82,14 @@
                             $('#wait5').hide().delay(37000).fadeIn(5000).delay(4000).fadeOut(28500);
 
 
-                            var bgSound = document.createElement('audio');
-                            bgSound.preload = "auto";
-                            bgSound.onloadeddata = soundFunction;
-                            bgSound.src = "{{ url_for('static', filename='mp3/Fade.mp3') }}"
+                            audio = new Audio();
+                            audio.preload = "auto";
+                            audio.src = "{{ url_for('static', filename='mp3/Fade.mp3') }}"
                             
+                            $(audio).on("loadeddata", soundFunction);
 
                             function soundFunction () {
-                                setTimeout(function() { getElementsByTagName['audio'].play(); }, 43000);
+                                setTimeout(function() { audio.play(); }, 43000);
                             }
                             
                             if(isMobile) {
