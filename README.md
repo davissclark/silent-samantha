@@ -1,2 +1,2 @@
-# existentialvision
-blog and dev platform
+# silentsamantha
+parody on silence
