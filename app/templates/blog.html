@@ -39,7 +39,7 @@
         <p><strong>I know what it is</strong></p>
     </li>
 </ul>
-<audio id = "audio" onloadeddata="setTimeout(function() { $('#audio')[0].play(); }, 43000)">
+<audio id = "audio" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 43000)">
     <source src="{{ url_for('static', filename='mp3/Fade.mp3') }}" type="audio/mp3" />
 </audio>
     {% block entry_column %}
