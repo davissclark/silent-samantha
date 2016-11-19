@@ -83,13 +83,13 @@
 
 
                             var bgSound = document.createElement('audio');
-                            bgSound.src = "{{ url_for('static', filename='mp3/Fade.mp3') }}"
                             bgSound.preload = "auto";
-
-                            $(bgSound).on("loadeddata", soundFunction)
+                            bgSound.onloadeddata = soundFunction;
+                            bgSound.src = "{{ url_for('static', filename='mp3/Fade.mp3') }}"
+                            
 
                             function soundFunction () {
-                                setTimeout(function() { $('audio')[0].play(); }, 43000);
+                                setTimeout(function() { getElementsByTagName['audio'].play(); }, 43000);
                             }
                             
                             if(isMobile) {
