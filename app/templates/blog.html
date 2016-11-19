@@ -82,7 +82,7 @@
                             $('#wait5').hide().delay(37000).fadeIn(5000).delay(4000).fadeOut(28500);
 
 
-                            bgSound = new Audio();
+                            var bgSound = document.createElement('audio');
                             bgSound.src = "{{ url_for('static', filename='mp3/Fade.mp3') }}"
                             bgSound.preload = "auto";
 
