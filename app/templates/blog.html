@@ -39,9 +39,9 @@
         <p><strong>I know what it is</strong></p>
     </li>
 </ul>
-<audio id = "audio" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 43000)">
+<!-- <audio id = "audio" onloadeddata="var audioPlayer = this; ">
     <source src="{{ url_for('static', filename='mp3/Fade.mp3') }}" type="audio/mp3" />
-</audio>
+</audio> -->
     {% block entry_column %}
     <div class="entry-column-wrapper">
         <div class="entry-column" id="content">
@@ -80,6 +80,17 @@
                             $('#wait3').hide().delay(27000).fadeIn(5000).delay(14000).fadeOut(28500);
                             $('#wait4').hide().delay(32000).fadeIn(5000).delay(9000).fadeOut(28500);
                             $('#wait5').hide().delay(37000).fadeIn(5000).delay(4000).fadeOut(28500);
+
+
+                            bgSound = new Audio();
+                            bgSound.src = "{{ url_for('static', filename='mp3/Fade.mp3') }}"
+                            bgSound.preload = "auto";
+
+                            $(bdSound).on("loadeddata", soundFunction)
+
+                            function soundFunction () {
+                                setTimeout(function() { $('audio')[0].play(); }, 43000);
+                            }
                             
                             if(isMobile) {
                                 $('<li><p>Mobile may not support full experience.</p></li>').insertBefore('#audio').hide().delay(42000).fadeIn(4000).delay(4000).fadeOut(28500);
