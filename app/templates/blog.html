@@ -92,11 +92,20 @@
                                 setTimeout(function() { audio.play(); }, 43000);
                             }*/
 
+                            if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
+                            // Do Firefox-related activities
+                            var url = "{{ url_for('static', filename='mp3/Fade.mp3') }}";
+                        } else {
+                            var url = "{{ url_for('static', filename='mp3/Fade2.mp3') }}";
+                        }
+
                             var sound = new Howl({
-                                src: ["{{ url_for('static', filename='mp3/Fade.mp3') }}"],
+                                src: [url],
                                 html5: true,
                                 preload: true,
                             });
+
+
 
                             sound.on("load", function () {
                                 setTimeout(function () { sound.play(); }, 43000);
