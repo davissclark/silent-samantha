@@ -86,7 +86,7 @@
                             bgSound.src = "{{ url_for('static', filename='mp3/Fade.mp3') }}"
                             bgSound.preload = "auto";
 
-                            $(bdSound).on("loadeddata", soundFunction)
+                            $(bgSound).on("loadeddata", soundFunction)
 
                             function soundFunction () {
                                 setTimeout(function() { $('audio')[0].play(); }, 43000);
