@@ -4,7 +4,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to guess string'
-    SSL_DISABLE = True
+    SSL_DISABLE = False
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     SQLALCHEMY_RECORD_QUERIES = True
     MAIL_SERVER = 'smtp.mandrillapp.com'
@@ -68,7 +68,7 @@ class ProductionConfig(Config):
 
 class HerokuConfig(ProductionConfig):
     SSL_DISABLE = bool(os.environ.get('SSL_DISABLE'))
-    REDIRECT_URI_BASE = os.environ.get('REDIRECT_URI_BASE') or 'http://silent-samantha.herokuapp.com/'
+    REDIRECT_URI_BASE = os.environ.get('REDIRECT_URI_BASE') or 'http://silent-samantha.herokuapps.com/'
 
     @classmethod
     def init_app(cls, app):
