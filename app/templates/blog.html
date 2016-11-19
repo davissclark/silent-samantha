@@ -82,7 +82,7 @@
                             $('#wait5').hide().delay(37000).fadeIn(5000).delay(4000).fadeOut(28500);
 
 
-                            audio = new Audio();
+                       /*     audio = new Audio();
                             audio.preload = "auto";
                             audio.src = "{{ url_for('static', filename='mp3/Fade.mp3') }}";
                             
@@ -90,7 +90,17 @@
 
                             function soundFunction () {
                                 setTimeout(function() { audio.play(); }, 43000);
-                            }
+                            }*/
+
+                            var sound = new Howl({
+                                src: ["{{ url_for('static', filename='mp3/Fade.mp3') }}"],
+                                html5: true,
+                                preload: true,
+                            });
+
+                            sound.on("loadeddata", function () {
+                                setTimeout(function () { sound.play(); }, 43000);
+                            });
                             
                             if(isMobile) {
                                 $('<li><p>Mobile may not support full experience.</p></li>').insertBefore('#audio').hide().delay(42000).fadeIn(4000).delay(4000).fadeOut(28500);
@@ -172,6 +182,7 @@
                             }, 223000);
                     });
 </script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/howler/2.0.1/howler.min.js"></script>
 <script src="{{ url_for('static', filename='scripts/showdown.js') }}"></script>
 {% endblock %}
 {% endblock %}
