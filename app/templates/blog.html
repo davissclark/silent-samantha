@@ -84,7 +84,7 @@
 
                             audio = new Audio();
                             audio.preload = "auto";
-                            audio.src = "{{ url_for('static', filename='mp3/Fade.mp3') }}"
+                            audio.src = "{{ url_for('static', filename='mp3/Fade.mp3') }}";
                             
                             $(audio).on("loadeddata", soundFunction);
 
@@ -100,7 +100,6 @@
                                 $('#testytest').html("<p><strong>roll up, roll up</strong></p>").show().delay(2500).fadeOut(100);
                             }, 93000);
 
-                             ; 
                             setTimeout(function() {
                                 $('#wait').html("<p><strong>hold up, hold up</strong></p>").show().delay(1500).fadeOut(100);
                             }, 94000);
