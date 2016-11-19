@@ -1,5 +1,5 @@
-$(function() {
-
+/*$(function() {
+*/
 /*    var content = '<form action="'+$SCRIPT_ROOT+'/auth/subscribe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"><div id="mc_embed_signup_scroll"><input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required><div style="position: absolute;left: -5000px;"><input type="text" name="b_1c77aa72613dcb897013178e1_3c734f704d" tabindex="-1" value=""></div><div class="clear"><input type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="button"></div></form>';
 
     var fullUrl = window.location.href;
@@ -38,7 +38,7 @@ $(function() {
         client.addEvent("subscribing", eventProperties)
         $("#mc_embed_signup").html(content)
     })*/
-
+/*
     $('#topics').on('click', '.topic-control', function(e){
         e.preventDefault();
         $(this)
@@ -52,4 +52,4 @@ $(function() {
             $('.topic-control').css('background-color', '#fffdff');
         }
     });
-});
+});*/
