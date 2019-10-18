@@ -2,4 +2,4 @@
 ForgeryPy==0.1
 coverage==3.7.1
 selenium==2.42.1
-httpie==0.8.0
+httpie==1.0.3
