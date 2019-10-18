@@ -37,7 +37,7 @@ elasticsearch==1.2.0
 gnureadline==6.3.3
 gunicorn==19.1.1
 html5lib==0.999
-httpie==0.8.0
+httpie==1.0.3
 ipython==2.2.0
 iso8601==0.1.10
 itsdangerous==0.24
