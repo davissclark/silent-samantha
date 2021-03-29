@@ -20,7 +20,7 @@ Mail==2.1.0
 Mako==1.0.0
 Markdown==2.4.1
 MarkupSafe==0.23
-Pygments==1.6
+Pygments==2.7.4
 SQLAlchemy==0.9.7
 Sys==1.0
 WTForms==2.0.1
