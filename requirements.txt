@@ -47,7 +47,7 @@ mailsnake==1.6.2
 mandrill==1.0.56
 newrelic==2.32.0.28
 oauthlib==0.6.3
-py==1.4.25
+py==1.10.0
 pycrypto==2.6.1
 pytest==2.6.3
 psycopg2
