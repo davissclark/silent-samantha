@@ -56,7 +56,7 @@ requests-oauthlib==0.4.1
 simplejson==3.6.4
 six==1.8.0
 stevedore==1.0.0
-urllib3==1.9.1
+urllib3==1.26.5
 virtualenv==1.11.6
 virtualenv-clone==0.2.5
 virtualenvwrapper==4.3.1
